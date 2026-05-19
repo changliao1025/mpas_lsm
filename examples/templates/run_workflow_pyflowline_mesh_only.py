@@ -33,18 +33,18 @@ from pyflowline.configuration.change_json_key_value import change_json_key_value
 # start of common user settings
 ##======================================================================
 #date time for simulation
-sDate_today = '20260301'  #use a fixed date for easy repeatability
+sDate_today = '20260302'  #use a fixed date for easy repeatability
 sDate_today = datetime.now().strftime('%Y%m%d')
 #index for different runs
-iCase_index = 2
+iCase_index = 1
 
 #flag for component
 iFlag_run_jigsaw = 1
 #setup flags for debugging
 iFlag_simplify_hydrosheds_river_network = 0
 iFlag_flexible_river_mouth = 0
-iFlag_process_watershed_boundary = 1
-iFlag_process_coastline = 0
+iFlag_process_watershed_boundary = 0
+iFlag_process_coastline = 1
 
 iFlag_reprocess_config = 0
 
@@ -53,16 +53,15 @@ nOutlet_largest = 100
 
 #resolution settings
 dResolution_ocean = 30
-dResolution_land = 10  #unit in km
-dResolution_river_network = 10.0
-dResolution_river_outlet = 10.0
-dResolution_coastline = 10.0  #unit in km
+dResolution_land = 12  #unit in km
+dResolution_river_network = 6.0
+dResolution_river_outlet = 12.0
+dResolution_coastline = 6.0  #unit in km
 
 sWorkspace_output = '/compyfs/liao313/04model/pyhexwatershed/global/'
 sWorkspace_watershed_boundary_in = '/compyfs/liao313/00raw/hydrology/hydrosheds/hydrobasin'
 sFilename_flowline_hydrosheds_in = '/compyfs/liao313/00raw/hydrology/hydrosheds/hydroriver/HydroRIVERS_v10_shp/HydroRIVERS_v10_shp/HydroRIVERS_v10.shp'
 sFilename_geojson_geometery_feature = '/qfs/people/liao313/data/hexwatershed/global/vector/region.geojson'
-sFilename_mpas_mesh_netcdf = '/compyfs/liao313/04model/pyhexwatershed/global/pyflowline20251122001/jigsaw/out/invert_mesh.nc'
 
 ##======================================================================
 # end of common user settings
@@ -71,7 +70,7 @@ sFilename_mpas_mesh_netcdf = '/compyfs/liao313/04model/pyhexwatershed/global/pyf
 ##======================================================================
 # start uncommon user settings
 ##======================================================================
-iFlag_dam = 1
+iFlag_dam = 0
 sFilename_dam = '/compyfs/liao313/00raw/dam/GRanD_Version_1_3/GRanD_dams_v1_3_merged.geojson' #should consider both on and snapped dams in this dataset
 
 ##======================================================================

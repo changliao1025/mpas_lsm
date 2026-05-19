@@ -7,9 +7,8 @@ from pyearth.toolbox.conversion.convert_vector_format import convert_vector_form
 sPath_library = '/qfs/people/liao313/workspace/python/uraster'
 sys.path.append(sPath_library)
 from uraster.classes.uraster import uraster
-# Download input data using Pooch (downloads to system cache)
 
-sFolder_output = "/compyfs/liao313/04model/pyhexwatershed/global/pyflowline20260203001"
+sFolder_output = "/compyfs/liao313/04model/pyhexwatershed/global/pyflowline20260601001"
 
 sFilename_source_mesh = os.path.join(sFolder_output, "mpas.geojson")
 sFilename_target_mesh =  os.path.join(sFolder_output, "uraster.geojson")
@@ -48,11 +47,6 @@ def main():
 
     if not os.path.exists(pRaster.sFilename_target_mesh):
         print(f"Target mesh file does not exist: {pRaster.sFilename_target_mesh}")
-
-
-    sFilename_source_mesh_parquet = os.path.join(sFolder_output, "mpas_source.parquet"
-    )
-    # convert_vector_format(pRaster.sFilename_source_mesh, sFilename_source_mesh_parquet)
 
     pRaster.setup(iFlag_verbose_in=True)
     # pRaster.report_inputs()
